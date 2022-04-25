@@ -5,11 +5,11 @@ const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 const Manager = require('./lib/Manager');
 
-function initApp() {
-    startHtml();
-    addMemeber();
-}
-const promtUser = () => {
+// function initApp() {
+//     startHtml();
+//     addMemeber();
+// }
+const promptUser = () => {
     return inquirer.prompt([
         {
             message: 'Enter Team Memebers Name',
@@ -32,5 +32,25 @@ const promtUser = () => {
         {
             message: 'Enter members email address',
             name: 'email'
-        }])
-}
+        }
+    ]);
+};
+
+promptUser()
+  .then(promptProject)
+  .then(profileData => {
+    return generatePage(profileData);
+  })
+  .then(pageHTML => {
+    return writeFile(pageHTML);
+  })
+  .then(writeFileResponse => {
+    console.log(writeFileResponse);
+    return copyFile();
+  })
+  .then(copyFileResponse => {
+    console.log(copyFileResponse);
+  })
+  .catch(err => {
+    console.log(err);
+  });
