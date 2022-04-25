@@ -12,11 +12,25 @@ function initApp() {
 const promtUser = () => {
     return inquirer.prompt([
         {
-            message: "Enter Team Memebers Name",
-            name: "name",
+            message: 'Enter Team Memebers Name',
+            name: 'name',
         },
         {
-            
-        }
-    ])
+            type: 'list',
+            message: 'select team members role',
+            choices: [
+                'Engineer',
+                'Intern',
+                'Manager'
+            ],
+            name: 'role'    
+        },
+        {
+            message: 'Enter Team memebers id',
+            name: 'id'
+        },
+        {
+            message: 'Enter members email address',
+            name: 'email'
+        }])
 }
