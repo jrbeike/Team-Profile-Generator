@@ -1,9 +1,9 @@
 const inquirer = require("inquirer");
-const genreatePage = require('./src/page-template.js');
-const { writeFile, copyFile } = require('./utils/generate-site');
-const Engineer = require('./lib/Engineer');
-const Intern = require('./lib/Intern');
-const Manager = require('./lib/Manager');
+const generatePage = require('./src/page-template.js');
+const { writeFile, copyFile } = require('./utils/generate-site.js');
+const Engineer = require('./lib/Engineer.js');
+const Intern = require('./lib/Intern.js');
+const Manager = require('./lib/Manager.js');
 
 // function initApp() {
 //     startHtml();
